@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace InheritanceForm
 {
+    enum Species {CAT, DOG, BIRD};
     class Animal
     {
         public string Name;
-        public int Species;
+        public Species Species;
         public bool CanFly;
 
     }

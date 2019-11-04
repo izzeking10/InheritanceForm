@@ -11,7 +11,7 @@ namespace InheritanceForm
         public Cat(string name)
         {
             Name = name;
-            Species = 0;
+            Species = Species.CAT;
             CanFly = false;
         }
 

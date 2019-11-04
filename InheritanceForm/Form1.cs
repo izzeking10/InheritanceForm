@@ -17,9 +17,9 @@ namespace InheritanceForm
         {
             InitializeComponent();
 
-            animals.Add(new Cat("Name1"));
-            animals.Add(new Dog("Name2"));
-            animals.Add(new Bird("Name3"));
+            animals.Add(new Cat("Cat"));
+            animals.Add(new Dog("Dog"));
+            animals.Add(new Bird("Bird"));
 
 
 
@@ -47,9 +47,19 @@ namespace InheritanceForm
         private void cbNames_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedindexchanged = cbNames.SelectedIndex;
-            Animal animal = animals[selectedindexchanged];
-            lbSpecies.Text = animal.Species.ToString();
-            lbCanFly.Text = (animal.CanFly ? "Kan flyga" : "Kan INTE flyga");
+            if (selectedindexchanged >= 0)
+            {
+                Animal animal = animals[selectedindexchanged];
+                lbSpecies.Text = animal.Species.ToString();
+                pictureBox1.Image = imageList1.Images[(int)animal.Species];
+                lbCanFly.Text = (animal.CanFly ? "Kan flyga" : "Kan INTE flyga");
+            }
+            else
+            {
+                lbSpecies.Text = "";
+                lbCanFly.Text = "";
+                pictureBox1.Image = null;
+            }
         }
     }
 }
